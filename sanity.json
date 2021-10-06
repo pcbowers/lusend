@@ -1,0 +1,49 @@
+{
+  "root": true,
+  "project": {
+    "name": "lusend"
+  },
+  "api": {
+    "projectId": "2jw4tyx9",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/color-input"
+  ],
+  "env": {
+    "development": {
+      "plugins": ["@sanity/vision"]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./styles/global.css"
+    },
+    {
+      "implements": "part:@sanity/base/brand-logo",
+      "path": "./components/Logo.js"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./parts/deskToolStructure.js"
+    },
+    {
+      "name": "part:@sanity/base/new-document-structure",
+      "path": "./parts/newDocumentStructure.js"
+    },
+    {
+      "implements": "part:@sanity/base/document-actions/resolver",
+      "path": "./parts/documentActionsResolver.js"
+    }
+  ]
+}

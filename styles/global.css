@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+:root {
+  --brand-primary: #0a254e;
+  --brand-primary--inverted: #ffffff;
+  --brand-secondary: #990000;
+  --brand-secondary--inverted: #ffffff;
+  --font-family-sans-serif: "Montserrat";
+  --font-size-base: 16px;
+}
