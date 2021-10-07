@@ -1,6 +1,5 @@
 import React from "react"
-import { FaExternalLinkAlt, FaLink } from "react-icons/fa"
-import { FaPencilAlt, FaPalette } from "react-icons/fa"
+import { FaExternalLinkAlt, FaLink, FaPencilAlt } from "react-icons/fa"
 import {
   MdOutlineFormatColorText,
   MdOutlineFormatColorFill
@@ -52,13 +51,13 @@ const BackgroundRenderer = (props) => {
   )
 }
 
-export default {
-  name: "writing",
-  title: "Writings",
+export const basicBlock = {
+  name: "basicBlock",
+  title: "Basic Block Contents",
   type: "object",
   icon: FaPencilAlt,
   custom: {
-    singular: "Writing"
+    singular: "Basic Block Content"
   },
   fields: [
     {
@@ -121,6 +120,29 @@ export default {
               }
             ]
           }
+        }
+      ]
+    }
+  ]
+}
+
+export const advancedBlock = {
+  name: "advancedBlock",
+  title: "Basic Block Contents",
+  type: "object",
+  icon: FaPencilAlt,
+  custom: {
+    singular: "Basic Block Content"
+  },
+  fields: [
+    {
+      name: "content",
+      title: "Content",
+      type: "array",
+      of: [
+        basicBlock.fields[0].of[0],
+        {
+          type: "section.testimonial"
         }
       ]
     }

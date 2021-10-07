@@ -1,6 +1,21 @@
-import { FaExternalLinkAlt } from "react-icons/fa"
+import { FaLink, FaExternalLinkAlt } from "react-icons/fa"
 
-export default {
+export const internalLink = {
+  name: "internalLink",
+  type: "object",
+  icon: FaLink,
+  title: "Internal link",
+  fields: [
+    {
+      name: "reference",
+      type: "reference",
+      title: "Reference",
+      to: [{ type: "testimonial" }]
+    }
+  ]
+}
+
+export const externalLink = {
   name: "externalLink",
   type: "object",
   icon: FaExternalLinkAlt,
